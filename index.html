@@ -1,49 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Lingerie Store</title>
+  <title>Custom Lingerie</title>
   <style>
     body {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       text-align: center;
       padding: 40px;
+      background-color: #fafafa;
     }
 
     .product {
-      border: 1px solid #ccc;
-      padding: 20px;
-      margin: 20px;
+      border: 1px solid #ddd;
+      padding: 30px;
+      margin: auto;
+      max-width: 400px;
+      background: white;
+      border-radius: 10px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-style: italic;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      font-size: 20px;
+      margin-bottom: 20px;
     }
 
     input {
       display: block;
-      margin: 10px auto;
-      padding: 8px;
+      width: 90%;
+      margin: 8px auto;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
 
     button {
-      padding: 10px 20px;
+      margin-top: 15px;
+      padding: 12px 20px;
       background: black;
       color: white;
       border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #333;
     }
   </style>
 </head>
 
 <body>
 
-<h1>My Lingerie Collection</h1>
-
 <div class="product">
-  <h2>Lace Set</h2>
-  <p>£45</p>
+  <h1>Custom Lingerie Set</h1>
+  <div class="subtitle">Please insert accurate measurements below</div>
+  <div class="price">£745.00</div>
 
-  <form>
-    <input type="number" placeholder="Bust (cm)" required>
-    <input type="number" placeholder="Waist (cm)" required>
-    <input type="number" placeholder="Hips (cm)" required>
+  <form action="https://formspree.io/f/yourformid" method="POST">
 
-    <button type="submit">Order</button>
+    <input type="number" name="underbust" placeholder="Underbust (cm)" required>
+    <input type="number" name="bust" placeholder="Bust (cm)" required>
+    <input type="number" name="bottom_cup_depth" placeholder="Bottom Cup Depth (cm)" required>
+    <input type="number" name="horizontal_hemisphere" placeholder="Horizontal Hemisphere (cm)" required>
+    <input type="number" name="torso_length" placeholder="Torso Length (cm)" required>
+    <input type="number" name="waist" placeholder="Waist (cm)" required>
+    <input type="number" name="high_hip" placeholder="High Hip (cm)" required>
+    <input type="number" name="low_hip" placeholder="Low Hip (cm)" required>
+    <input type="number" name="rise" placeholder="Rise / Crotch Depth (cm)" required>
+
+    <button type="submit">Order Custom Set</button>
+
   </form>
 </div>
 
