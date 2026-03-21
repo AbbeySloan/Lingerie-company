@@ -1,37 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Custom Lingerie</title>
+  <title>Lingerie Atelier</title>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Georgia", serif;
+      background-color: #f8f6f3;
+      color: #111;
       text-align: center;
       padding: 40px;
-      background-color: #fafafa;
-    }
-
-    .product {
-      border: 1px solid #ddd;
-      padding: 30px;
-      margin: auto;
-      max-width: 400px;
-      background: white;
-      border-radius: 10px;
     }
 
     h1 {
-      margin-bottom: 10px;
+      font-size: 36px;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+    }
+
+    .product {
+      background: white;
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 420px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      margin-bottom: 5px;
+      font-weight: normal;
     }
 
     .subtitle {
       font-style: italic;
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 20px;
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 15px;
     }
 
     .price {
-      font-size: 20px;
+      font-size: 18px;
       margin-bottom: 20px;
     }
 
@@ -40,17 +49,20 @@
       width: 90%;
       margin: 8px auto;
       padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
     }
 
     button {
       margin-top: 15px;
-      padding: 12px 20px;
+      padding: 12px 25px;
       background: black;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-family: inherit;
+      letter-spacing: 1px;
       cursor: pointer;
     }
 
@@ -58,29 +70,92 @@
       background: #333;
     }
   </style>
+
 </head>
 
 <body>
 
+<h1>Lingerie Atelier</h1>
+
+<!-- BRA -->
 <div class="product">
-  <h1>Custom Lingerie Set</h1>
+  <h2>Bra</h2>
   <div class="subtitle">Please insert accurate measurements below</div>
-  <div class="price">£745.00</div>
+  <div class="price">£175</div>
 
   <form action="https://formspree.io/f/yourformid" method="POST">
+    <input type="number" name="underbust" placeholder="Underbust (inches)" required>
+    <input type="number" name="bust" placeholder="Bust (inches)" required>
+    <input type="number" name="bottom_cup_depth" placeholder="Bottom Cup Depth (inches)" required>
+    <input type="number" name="horizontal_hemisphere" placeholder="Horizontal Hemisphere (inches)" required>
 
-    <input type="number" name="underbust" placeholder="Underbust (cm)" required>
-    <input type="number" name="bust" placeholder="Bust (cm)" required>
-    <input type="number" name="bottom_cup_depth" placeholder="Bottom Cup Depth (cm)" required>
-    <input type="number" name="horizontal_hemisphere" placeholder="Horizontal Hemisphere (cm)" required>
-    <input type="number" name="torso_length" placeholder="Torso Length (cm)" required>
-    <input type="number" name="waist" placeholder="Waist (cm)" required>
-    <input type="number" name="high_hip" placeholder="High Hip (cm)" required>
-    <input type="number" name="low_hip" placeholder="Low Hip (cm)" required>
-    <input type="number" name="rise" placeholder="Rise / Crotch Depth (cm)" required>
+    <button type="submit">Order Bra</button>
+  </form>
+</div>
 
-    <button type="submit">Order Custom Set</button>
+<!-- GARTER BELT -->
+<div class="product">
+  <h2>Garter Belt</h2>
+  <div class="subtitle">Please insert accurate measurements below</div>
+  <div class="price">£140</div>
 
+  <form action="https://formspree.io/f/yourformid" method="POST">
+    <input type="number" name="torso_length" placeholder="Torso Length (inches)" required>
+    <input type="number" name="waist" placeholder="Waist (inches)" required>
+    <input type="number" name="high_hip" placeholder="High Hip (inches)" required>
+    <input type="number" name="low_hip" placeholder="Low Hip (inches)" required>
+
+    <button type="submit">Order Garter Belt</button>
+  </form>
+</div>
+
+<!-- THONG -->
+<div class="product">
+  <h2>Thong</h2>
+  <div class="subtitle">Please insert accurate measurements below</div>
+  <div class="price">£60</div>
+
+  <form action="https://formspree.io/f/yourformid" method="POST">
+    <input type="number" name="waist" placeholder="Waist (inches)" required>
+    <input type="number" name="high_hip" placeholder="High Hip (inches)" required>
+    <input type="number" name="low_hip" placeholder="Low Hip (inches)" required>
+    <input type="number" name="rise" placeholder="Rise / Crotch Depth (inches)" required>
+
+    <button type="submit">Order Thong</button>
+  </form>
+</div>
+
+<!-- FULL SET -->
+<div class="product">
+  <h2>Full Set</h2>
+  <div class="subtitle">Complete set — all measurements required</div>
+  <div class="price">£310</div>
+
+  <form action="https://formspree.io/f/yourformid" method="POST">
+    <input type="number" name="underbust" placeholder="Underbust (inches)" required>
+    <input type="number" name="bust" placeholder="Bust (inches)" required>
+    <input type="number" name="bottom_cup_depth" placeholder="Bottom Cup Depth (inches)" required>
+    <input type="number" name="horizontal_hemisphere" placeholder="Horizontal Hemisphere (inches)" required>
+    <input type="number" name="torso_length" placeholder="Torso Length (inches)" required>
+    <input type="number" name="waist" placeholder="Waist (inches)" required>
+    <input type="number" name="high_hip" placeholder="High Hip (inches)" required>
+    <input type="number" name="low_hip" placeholder="Low Hip (inches)" required>
+    <input type="number" name="rise" placeholder="Rise / Crotch Depth (inches)" required>
+
+    <button type="submit">Order Full Set</button>
+  </form>
+</div>
+
+<!-- CUSTOM -->
+<div class="product">
+  <h2>Custom Lingerie Set</h2>
+  <div class="subtitle">Fully bespoke — measurements and design consultation required</div>
+  <div class="price">Price given upon request</div>
+
+  <form action="https://formspree.io/f/yourformid" method="POST">
+    <input type="text" name="notes" placeholder="Describe your custom request" required>
+
+    <button type="submit">Request Custom Piece</button>
   </form>
 </div>
 
