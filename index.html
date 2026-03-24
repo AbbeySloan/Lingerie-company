@@ -3,7 +3,6 @@
 <head>
   <title>Atelier du Sloan</title>
 
-  <!-- Elegant narrow + italic fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;1,300&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
@@ -15,13 +14,12 @@
       color: #111;
     }
 
-    /* NAV */
+    /* NAV BAR */
     nav {
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 60px;
-      padding: 20px;
+      gap: 50px;
+      padding: 18px;
       background: white;
       border-bottom: 1px solid #eee;
       position: sticky;
@@ -35,35 +33,45 @@
       letter-spacing: 3px;
     }
 
-    .logo {
+    /* BRAND NAME BELOW NAV */
+    .brand {
+      text-align: center;
+      padding: 30px 20px 10px;
       font-family: 'Great Vibes', cursive;
-      font-size: 30px;
+      font-size: 42px;
       font-style: normal;
     }
 
     /* SECTIONS */
     section {
-      padding: 80px 20px;
-      max-width: 1000px;
+      padding: 70px 20px;
+      max-width: 1100px;
       margin: auto;
     }
 
     .section-title {
       text-align: center;
-      font-size: 22px;
+      font-size: 20px;
       letter-spacing: 3px;
       margin-bottom: 40px;
     }
 
-    /* FEATURE IMAGE */
+    /* FEATURED */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
     .featured img {
       width: 100%;
       display: block;
     }
 
-    .featured-content {
-      text-align: center;
-      margin-top: 30px;
+    .featured-content h2 {
+      font-weight: normal;
+      font-size: 24px;
     }
 
     .price {
@@ -84,13 +92,13 @@
     /* ABOUT */
     .about-text {
       max-width: 600px;
-      margin: 40px auto 0;
+      margin: auto;
       text-align: center;
       line-height: 1.8;
       color: #444;
     }
 
-    /* ORDER (more minimal + luxury) */
+    /* ORDER */
     .order-container {
       max-width: 500px;
       margin: auto;
@@ -101,12 +109,11 @@
     .order-container h3 {
       text-align: center;
       font-weight: normal;
-      margin-bottom: 10px;
     }
 
     .order-container .price {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     input {
@@ -143,6 +150,13 @@
       color: #777;
     }
 
+    /* MOBILE */
+    @media(max-width: 800px) {
+      .featured {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 
@@ -150,32 +164,40 @@
 
 <!-- NAV -->
 <nav>
+  <a href="#about">ABOUT</a>
   <a href="#lingerie">LINGERIE</a>
-  <div class="logo">Atelier du Sloan</div>
   <a href="#order">ORDER</a>
 </nav>
+
+<!-- BRAND NAME -->
+<div class="brand">Atelier du Sloan</div>
 
 <!-- LINGERIE -->
 <section id="lingerie">
 
   <div class="featured">
     <img src="lingerie.jpg">
+
+    <div class="featured-content">
+      <h2>Signature Lace Set</h2>
+      <p>Delicate, structured lace crafted with precision and intention.</p>
+      <div class="price">£310</div>
+      <a href="#order" class="button">PURCHASE</a>
+    </div>
   </div>
 
-  <div class="featured-content">
-    <h2>Signature Lace Set</h2>
-    <div class="price">£310</div>
-    <a href="#order" class="button">PURCHASE</a>
-  </div>
+</section>
 
-  <!-- ABOUT (now under image) -->
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-title">About</div>
+
   <div class="about-text">
     Atelier du Sloan is a made-to-measure lingerie studio focused on precision, structure, and form.  
     Each piece is individually crafted to the wearer’s measurements, combining technical construction with a refined and intimate aesthetic.  
     <br><br>
     The work explores the intersection of garment design and art — where lingerie becomes both functional and expressive.
   </div>
-
 </section>
 
 <!-- ORDER -->
