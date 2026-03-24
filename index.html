@@ -6,28 +6,81 @@
   <style>
     body {
       font-family: "Georgia", serif;
-      background-color: #f8f6f3;
+      background-color: #f5f3ef;
       color: #111;
-      text-align: center;
-      padding: 40px;
+      margin: 0;
     }
 
-    h1 {
-      font-size: 36px;
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 20px;
+      background: white;
+      position: sticky;
+      top: 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
       letter-spacing: 2px;
-      margin-bottom: 40px;
+      font-size: 14px;
     }
 
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    header h1 {
+      font-size: 42px;
+      font-weight: normal;
+      letter-spacing: 3px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+    }
+
+    /* ABOUT */
+    .about-text {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+    }
+
+    /* PRODUCT CARDS */
     .product {
       background: white;
       padding: 30px;
-      margin: 30px auto;
-      max-width: 420px;
       border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
     }
 
-    h2 {
+    .product h3 {
       margin-bottom: 5px;
       font-weight: normal;
     }
@@ -40,124 +93,136 @@
     }
 
     .price {
-      font-size: 18px;
       margin-bottom: 20px;
     }
 
     input {
-      display: block;
-      width: 90%;
-      margin: 8px auto;
+      width: 100%;
       padding: 10px;
+      margin: 6px 0;
       border: 1px solid #ddd;
       border-radius: 6px;
       font-family: inherit;
     }
 
     button {
-      margin-top: 15px;
-      padding: 12px 25px;
+      width: 100%;
+      padding: 12px;
       background: black;
       color: white;
       border: none;
       border-radius: 6px;
-      font-family: inherit;
-      letter-spacing: 1px;
       cursor: pointer;
     }
 
-    button:hover {
-      background: #333;
+    /* ART GALLERY */
+    .art img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 12px;
+      color: #777;
     }
   </style>
-
 </head>
 
 <body>
 
-<h1>Lingerie Atelier</h1>
+<!-- NAV -->
+<nav>
+  <a href="#about">ABOUT</a>
+  <a href="#lingerie">LINGERIE</a>
+  <a href="#art">ART</a>
+</nav>
 
-<!-- BRA -->
-<div class="product">
-  <h2>Bra</h2>
-  <div class="subtitle">Please insert accurate measurements below</div>
-  <div class="price">£235</div>
+<header>
+  <h1>Lingerie Atelier</h1>
+</header>
 
-  <form action="https://formspree.io/f/yourformid" method="POST">
-    <input type="number" name="underbust" placeholder="Underbust (inches)" required>
-    <input type="number" name="bust" placeholder="Bust (inches)" required>
-    <input type="number" name="bottom_cup_depth" placeholder="Bottom Cup Depth (inches)" required>
-    <input type="number" name="horizontal_hemisphere" placeholder="Horizontal Hemisphere (inches)" required>
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-title">About</div>
+  <div class="about-text">
+    Each piece is carefully designed and handcrafted with an emphasis on precision, form, and individuality.  
+    This atelier exists at the intersection of garment construction and art — where lingerie becomes both personal and expressive.  
+    <br><br>
+    Alongside made-to-measure lingerie, original paintings explore similar themes of form, intimacy, and structure.
+  </div>
+</section>
 
-    <button type="submit">Order Bra</button>
-  </form>
-</div>
+<!-- LINGERIE -->
+<section id="lingerie">
+  <div class="section-title">Lingerie</div>
 
-<!-- GARTER BELT -->
-<div class="product">
-  <h2>Garter Belt</h2>
-  <div class="subtitle">Please insert accurate measurements below</div>
-  <div class="price">£140</div>
+  <div class="grid">
 
-  <form action="https://formspree.io/f/yourformid" method="POST">
-    <input type="number" name="torso_length" placeholder="Torso Length (inches)" required>
-    <input type="number" name="waist" placeholder="Waist (inches)" required>
-    <input type="number" name="high_hip" placeholder="High Hip (inches)" required>
-    <input type="number" name="low_hip" placeholder="Low Hip (inches)" required>
+    <!-- BRA -->
+    <div class="product">
+      <h3>Bra</h3>
+      <div class="subtitle">Please insert accurate measurements below</div>
+      <div class="price">£175</div>
 
-    <button type="submit">Order Garter Belt</button>
-  </form>
-</div>
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <input type="number" name="underbust" placeholder="Underbust (inches)" required>
+        <input type="number" name="bust" placeholder="Bust (inches)" required>
+        <input type="number" name="bottom_cup_depth" placeholder="Bottom Cup Depth (inches)" required>
+        <input type="number" name="horizontal_hemisphere" placeholder="Horizontal Hemisphere (inches)" required>
+        <button type="submit">Order</button>
+      </form>
+    </div>
 
-<!-- THONG -->
-<div class="product">
-  <h2>Thong</h2>
-  <div class="subtitle">Please insert accurate measurements below</div>
-  <div class="price">£60</div>
+    <!-- GARTER -->
+    <div class="product">
+      <h3>Garter Belt</h3>
+      <div class="subtitle">Please insert accurate measurements below</div>
+      <div class="price">£140</div>
 
-  <form action="https://formspree.io/f/yourformid" method="POST">
-    <input type="number" name="waist" placeholder="Waist (inches)" required>
-    <input type="number" name="high_hip" placeholder="High Hip (inches)" required>
-    <input type="number" name="low_hip" placeholder="Low Hip (inches)" required>
-    <input type="number" name="rise" placeholder="Rise / Crotch Depth (inches)" required>
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <input type="number" name="torso_length" placeholder="Torso Length (inches)" required>
+        <input type="number" name="waist" placeholder="Waist (inches)" required>
+        <input type="number" name="high_hip" placeholder="High Hip (inches)" required>
+        <input type="number" name="low_hip" placeholder="Low Hip (inches)" required>
+        <button type="submit">Order</button>
+      </form>
+    </div>
 
-    <button type="submit">Order Thong</button>
-  </form>
-</div>
+    <!-- THONG -->
+    <div class="product">
+      <h3>Thong</h3>
+      <div class="subtitle">Please insert accurate measurements below</div>
+      <div class="price">£60</div>
 
-<!-- FULL SET -->
-<div class="product">
-  <h2>Full Set</h2>
-  <div class="subtitle">Complete set — all measurements required</div>
-  <div class="price">£475</div>
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <input type="number" name="waist" placeholder="Waist (inches)" required>
+        <input type="number" name="high_hip" placeholder="High Hip (inches)" required>
+        <input type="number" name="low_hip" placeholder="Low Hip (inches)" required>
+        <input type="number" name="rise" placeholder="Rise / Crotch Depth (inches)" required>
+        <button type="submit">Order</button>
+      </form>
+    </div>
 
-  <form action="https://formspree.io/f/yourformid" method="POST">
-    <input type="number" name="underbust" placeholder="Underbust (inches)" required>
-    <input type="number" name="bust" placeholder="Bust (inches)" required>
-    <input type="number" name="bottom_cup_depth" placeholder="Bottom Cup Depth (inches)" required>
-    <input type="number" name="horizontal_hemisphere" placeholder="Horizontal Hemisphere (inches)" required>
-    <input type="number" name="torso_length" placeholder="Torso Length (inches)" required>
-    <input type="number" name="waist" placeholder="Waist (inches)" required>
-    <input type="number" name="high_hip" placeholder="High Hip (inches)" required>
-    <input type="number" name="low_hip" placeholder="Low Hip (inches)" required>
-    <input type="number" name="rise" placeholder="Rise / Crotch Depth (inches)" required>
+  </div>
+</section>
 
-    <button type="submit">Order Full Set</button>
-  </form>
-</div>
+<!-- ART -->
+<section id="art">
+  <div class="section-title">Art</div>
 
-<!-- CUSTOM -->
-<div class="product">
-  <h2>Custom Lingerie Set</h2>
-  <div class="subtitle">Fully bespoke — measurements and design consultation required</div>
-  <div class="price">Price given upon request</div>
+  <div class="grid art">
+    <img src="https://via.placeholder.com/400x500">
+    <img src="https://via.placeholder.com/400x500">
+    <img src="https://via.placeholder.com/400x500">
+  </div>
+</section>
 
-  <form action="https://formspree.io/f/yourformid" method="POST">
-    <input type="text" name="notes" placeholder="Describe your custom request" required>
-
-    <button type="submit">Request Custom Piece</button>
-  </form>
-</div>
+<footer>
+  © 2026 Lingerie Atelier — Made to Measure
+</footer>
 
 </body>
 </html>
+
