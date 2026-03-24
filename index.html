@@ -3,12 +3,14 @@
 <head>
   <title>Atelier du Sloan</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <!-- Elegant narrow + italic fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;1,300&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      font-family: "Georgia", serif;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
       background-color: #f5f3ef;
       color: #111;
     }
@@ -16,133 +18,129 @@
     /* NAV */
     nav {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      padding: 15px 40px;
+      gap: 60px;
+      padding: 20px;
       background: white;
       border-bottom: 1px solid #eee;
       position: sticky;
       top: 0;
     }
 
-    .logo {
-      font-family: 'Great Vibes', cursive;
-      font-size: 28px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 30px;
-    }
-
     nav a {
       text-decoration: none;
       color: black;
-      font-size: 13px;
-      letter-spacing: 2px;
+      font-size: 12px;
+      letter-spacing: 3px;
     }
 
-    /* HEADER */
-    header {
-      text-align: center;
-      padding: 50px 20px 10px;
-    }
-
-    header h1 {
+    .logo {
       font-family: 'Great Vibes', cursive;
-      font-size: 48px;
-      font-weight: normal;
+      font-size: 30px;
+      font-style: normal;
     }
 
+    /* SECTIONS */
     section {
-      padding: 60px 20px;
-      max-width: 1200px;
+      padding: 80px 20px;
+      max-width: 1000px;
       margin: auto;
     }
 
     .section-title {
       text-align: center;
-      font-size: 24px;
+      font-size: 22px;
+      letter-spacing: 3px;
       margin-bottom: 40px;
-      letter-spacing: 2px;
     }
 
-    /* ABOUT */
-    .about-text {
-      max-width: 700px;
-      margin: auto;
-      text-align: center;
-      line-height: 1.7;
-      color: #444;
-    }
-
-    /* FEATURED */
-    .featured {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
+    /* FEATURE IMAGE */
     .featured img {
       width: 100%;
-      border-radius: 10px;
+      display: block;
+    }
+
+    .featured-content {
+      text-align: center;
+      margin-top: 30px;
     }
 
     .price {
       margin: 15px 0;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     .button {
       display: inline-block;
-      padding: 12px 25px;
+      padding: 10px 22px;
       background: black;
       color: white;
       text-decoration: none;
+      letter-spacing: 2px;
+      font-size: 12px;
     }
 
-    /* ORDER GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 40px;
+    /* ABOUT */
+    .about-text {
+      max-width: 600px;
+      margin: 40px auto 0;
+      text-align: center;
+      line-height: 1.8;
+      color: #444;
     }
 
-    .product {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    /* ORDER (more minimal + luxury) */
+    .order-container {
+      max-width: 500px;
+      margin: auto;
+      border-top: 1px solid #ddd;
+      padding-top: 40px;
+    }
+
+    .order-container h3 {
+      text-align: center;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+
+    .order-container .price {
+      text-align: center;
+      margin-bottom: 30px;
     }
 
     input {
       width: 100%;
-      padding: 10px;
-      margin: 6px 0;
-      border: 1px solid #ddd;
-      border-radius: 6px;
+      padding: 12px 0;
+      margin: 10px 0;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      background: transparent;
+      font-family: inherit;
+      font-style: italic;
+    }
+
+    input:focus {
+      outline: none;
+      border-bottom: 1px solid black;
     }
 
     button {
       width: 100%;
       padding: 12px;
+      margin-top: 20px;
       background: black;
       color: white;
       border: none;
+      letter-spacing: 2px;
+      font-size: 12px;
     }
 
     footer {
       text-align: center;
-      padding: 40px;
-      font-size: 12px;
+      padding: 60px 20px;
+      font-size: 11px;
       color: #777;
-    }
-
-    @media(max-width: 800px) {
-      .featured {
-        grid-template-columns: 1fr;
-      }
     }
 
   </style>
@@ -152,67 +150,58 @@
 
 <!-- NAV -->
 <nav>
+  <a href="#lingerie">LINGERIE</a>
   <div class="logo">Atelier du Sloan</div>
-
-  <div class="nav-links">
-    <a href="#about">ABOUT</a>
-    <a href="#lingerie">LINGERIE</a>
-    <a href="#order">ORDER</a>
-  </div>
+  <a href="#order">ORDER</a>
 </nav>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-title">About</div>
-  <div class="about-text">
-    Atelier du Sloan is a made-to-measure lingerie studio focused on precision, structure, and form.  
-    Each piece is individually crafted to the wearer’s measurements, combining technical construction with a refined, intimate aesthetic.  
-    <br><br>
-    The work explores the intersection of garment design and art — where lingerie becomes both functional and expressive.
-  </div>
-</section>
 
 <!-- LINGERIE -->
 <section id="lingerie">
-  <div class="section-title">Lingerie</div>
 
   <div class="featured">
     <img src="lingerie.jpg">
-
-    <div>
-      <h2>Signature Lace Set</h2>
-      <p>Delicate, structured lace crafted with precision.</p>
-      <div class="price">£310</div>
-
-      <a href="#order" class="button">Purchase</a>
-    </div>
   </div>
+
+  <div class="featured-content">
+    <h2>Signature Lace Set</h2>
+    <div class="price">£310</div>
+    <a href="#order" class="button">PURCHASE</a>
+  </div>
+
+  <!-- ABOUT (now under image) -->
+  <div class="about-text">
+    Atelier du Sloan is a made-to-measure lingerie studio focused on precision, structure, and form.  
+    Each piece is individually crafted to the wearer’s measurements, combining technical construction with a refined and intimate aesthetic.  
+    <br><br>
+    The work explores the intersection of garment design and art — where lingerie becomes both functional and expressive.
+  </div>
+
 </section>
 
 <!-- ORDER -->
 <section id="order">
+
   <div class="section-title">Order</div>
 
-  <div class="grid">
-    <div class="product">
-      <h3>Full Set</h3>
-      <div class="price">£310</div>
+  <div class="order-container">
+    <h3>Full Set</h3>
+    <div class="price">£310</div>
 
-      <form action="https://formspree.io/f/yourformid" method="POST">
-        <input type="number" name="underbust" placeholder="Underbust (inches)" required>
-        <input type="number" name="bust" placeholder="Bust (inches)" required>
-        <input type="number" name="bottom_cup_depth" placeholder="Bottom Cup Depth (inches)" required>
-        <input type="number" name="horizontal_hemisphere" placeholder="Horizontal Hemisphere (inches)" required>
-        <input type="number" name="torso_length" placeholder="Torso Length (inches)" required>
-        <input type="number" name="waist" placeholder="Waist (inches)" required>
-        <input type="number" name="high_hip" placeholder="High Hip (inches)" required>
-        <input type="number" name="low_hip" placeholder="Low Hip (inches)" required>
-        <input type="number" name="rise" placeholder="Rise / Crotch Depth (inches)" required>
+    <form action="https://formspree.io/f/yourformid" method="POST">
+      <input type="number" name="underbust" placeholder="Underbust (inches)" required>
+      <input type="number" name="bust" placeholder="Bust (inches)" required>
+      <input type="number" name="bottom_cup_depth" placeholder="Bottom Cup Depth (inches)" required>
+      <input type="number" name="horizontal_hemisphere" placeholder="Horizontal Hemisphere (inches)" required>
+      <input type="number" name="torso_length" placeholder="Torso Length (inches)" required>
+      <input type="number" name="waist" placeholder="Waist (inches)" required>
+      <input type="number" name="high_hip" placeholder="High Hip (inches)" required>
+      <input type="number" name="low_hip" placeholder="Low Hip (inches)" required>
+      <input type="number" name="rise" placeholder="Rise / Crotch Depth (inches)" required>
 
-        <button type="submit">Order Full Set</button>
-      </form>
-    </div>
+      <button type="submit">SUBMIT ORDER</button>
+    </form>
   </div>
+
 </section>
 
 <footer>
