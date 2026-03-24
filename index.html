@@ -3,58 +3,50 @@
 <head>
   <title>Atelier du Sloan</title>
 
+  <!-- Elegant font -->
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Great+Vibes&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       font-family: "Georgia", serif;
-      color: #111;
       background-color: #f5f3ef;
-    }
-
-    /* HERO SECTION */
-    .hero {
-      height: 90vh;
-      background: url("storefront.jpg") center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.3);
-    }
-
-    .hero h1 {
-      position: relative;
-      color: white;
-      font-size: 48px;
-      letter-spacing: 4px;
-      font-weight: normal;
+      color: #111;
     }
 
     /* NAV */
     nav {
-      position: sticky;
-      top: 0;
-      background: white;
       display: flex;
       justify-content: center;
       gap: 40px;
-      padding: 15px;
+      padding: 20px;
+      background: white;
       border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
     }
 
     nav a {
       text-decoration: none;
       color: black;
+      letter-spacing: 2px;
       font-size: 13px;
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      font-weight: normal;
       letter-spacing: 2px;
     }
 
+    /* SECTIONS */
     section {
       padding: 60px 20px;
       max-width: 1200px;
@@ -63,16 +55,16 @@
 
     .section-title {
       text-align: center;
-      font-size: 26px;
+      font-size: 24px;
       margin-bottom: 40px;
       letter-spacing: 2px;
     }
 
-    /* FEATURE PRODUCT */
+    /* FEATURED */
     .featured {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 50px;
       align-items: center;
     }
 
@@ -81,12 +73,9 @@
       border-radius: 10px;
     }
 
-    .featured-content {
-      padding: 20px;
-    }
-
-    .featured h2 {
+    .featured-content h2 {
       font-weight: normal;
+      font-size: 26px;
     }
 
     .price {
@@ -123,6 +112,7 @@
       margin: 6px 0;
       border: 1px solid #ddd;
       border-radius: 6px;
+      font-family: inherit;
     }
 
     button {
@@ -152,27 +142,27 @@
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>Atelier du Sloan</h1>
-</div>
-
 <!-- NAV -->
 <nav>
   <a href="#lingerie">LINGERIE</a>
   <a href="#order">ORDER</a>
 </nav>
 
-<!-- FEATURED PRODUCT -->
+<!-- HEADER -->
+<header>
+  <h1>Atelier du Sloan</h1>
+</header>
+
+<!-- FEATURED LINGERIE -->
 <section id="lingerie">
-  <div class="section-title">Featured Piece</div>
+  <div class="section-title">Lingerie</div>
 
   <div class="featured">
     <img src="lingerie.jpg">
 
     <div class="featured-content">
       <h2>Signature Lace Set</h2>
-      <p>Delicate construction with precise structure and soft lace composition.</p>
+      <p>Delicate, structured lace crafted with precision and attention to form.</p>
       <div class="price">£310</div>
 
       <a href="#order" class="button">Purchase</a>
@@ -180,7 +170,7 @@
   </div>
 </section>
 
-<!-- ORDER SECTION -->
+<!-- ORDER -->
 <section id="order">
   <div class="section-title">Order</div>
 
@@ -214,4 +204,3 @@
 
 </body>
 </html>
-
