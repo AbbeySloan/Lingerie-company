@@ -1,48 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lingerie Atelier</title>
+  <title>Atelier du Sloan</title>
 
   <style>
     body {
-      font-family: "Georgia", serif;
-      background-color: #f5f3ef;
-      color: #111;
       margin: 0;
+      font-family: "Georgia", serif;
+      color: #111;
+      background-color: #f5f3ef;
     }
 
-    /* NAVBAR */
+    /* HERO SECTION */
+    .hero {
+      height: 90vh;
+      background: url("storefront.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+    }
+
+    .hero h1 {
+      position: relative;
+      color: white;
+      font-size: 48px;
+      letter-spacing: 4px;
+      font-weight: normal;
+    }
+
+    /* NAV */
     nav {
+      position: sticky;
+      top: 0;
+      background: white;
       display: flex;
       justify-content: center;
       gap: 40px;
-      padding: 20px;
-      background: white;
-      position: sticky;
-      top: 0;
+      padding: 15px;
       border-bottom: 1px solid #eee;
     }
 
     nav a {
       text-decoration: none;
       color: black;
+      font-size: 13px;
       letter-spacing: 2px;
-      font-size: 14px;
     }
 
-    /* HEADER */
-    header {
-      text-align: center;
-      padding: 80px 20px 40px;
-    }
-
-    header h1 {
-      font-size: 42px;
-      font-weight: normal;
-      letter-spacing: 3px;
-    }
-
-    /* SECTIONS */
     section {
       padding: 60px 20px;
       max-width: 1200px;
@@ -51,18 +63,44 @@
 
     .section-title {
       text-align: center;
-      font-size: 28px;
+      font-size: 26px;
       margin-bottom: 40px;
       letter-spacing: 2px;
     }
 
-    /* ABOUT */
-    .about-text {
-      max-width: 700px;
-      margin: auto;
-      text-align: center;
-      line-height: 1.6;
-      color: #444;
+    /* FEATURE PRODUCT */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .featured img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .featured-content {
+      padding: 20px;
+    }
+
+    .featured h2 {
+      font-weight: normal;
+    }
+
+    .price {
+      margin: 15px 0;
+      font-size: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 25px;
+      background: black;
+      color: white;
+      text-decoration: none;
+      letter-spacing: 1px;
     }
 
     /* GRID */
@@ -72,28 +110,11 @@
       gap: 40px;
     }
 
-    /* PRODUCT CARDS */
     .product {
       background: white;
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-    }
-
-    .product h3 {
-      margin-bottom: 5px;
-      font-weight: normal;
-    }
-
-    .subtitle {
-      font-style: italic;
-      font-size: 13px;
-      color: #777;
-      margin-bottom: 15px;
-    }
-
-    .price {
-      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
     }
 
     input {
@@ -102,7 +123,6 @@
       margin: 6px 0;
       border: 1px solid #ddd;
       border-radius: 6px;
-      font-family: inherit;
     }
 
     button {
@@ -111,14 +131,6 @@
       background: black;
       color: white;
       border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    /* ART GALLERY */
-    .art img {
-      width: 100%;
-      border-radius: 10px;
     }
 
     footer {
@@ -127,100 +139,77 @@
       font-size: 12px;
       color: #777;
     }
+
+    /* MOBILE */
+    @media(max-width: 800px) {
+      .featured {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
+<!-- HERO -->
+<div class="hero">
+  <h1>Atelier du Sloan</h1>
+</div>
+
 <!-- NAV -->
 <nav>
-  <a href="#about">ABOUT</a>
   <a href="#lingerie">LINGERIE</a>
-  <a href="#art">ART</a>
+  <a href="#order">ORDER</a>
 </nav>
 
-<header>
-  <h1>Lingerie Atelier</h1>
-</header>
+<!-- FEATURED PRODUCT -->
+<section id="lingerie">
+  <div class="section-title">Featured Piece</div>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-title">About</div>
-  <div class="about-text">
-    Each piece is carefully designed and handcrafted with an emphasis on precision, form, and individuality.  
-    This atelier exists at the intersection of garment construction and art — where lingerie becomes both personal and expressive.  
-    <br><br>
-    Alongside made-to-measure lingerie, original paintings explore similar themes of form, intimacy, and structure.
+  <div class="featured">
+    <img src="lingerie.jpg">
+
+    <div class="featured-content">
+      <h2>Signature Lace Set</h2>
+      <p>Delicate construction with precise structure and soft lace composition.</p>
+      <div class="price">£310</div>
+
+      <a href="#order" class="button">Purchase</a>
+    </div>
   </div>
 </section>
 
-<!-- LINGERIE -->
-<section id="lingerie">
-  <div class="section-title">Lingerie</div>
+<!-- ORDER SECTION -->
+<section id="order">
+  <div class="section-title">Order</div>
 
   <div class="grid">
 
-    <!-- BRA -->
     <div class="product">
-      <h3>Bra</h3>
-      <div class="subtitle">Please insert accurate measurements below</div>
-      <div class="price">£175</div>
+      <h3>Full Set</h3>
+      <div class="price">£310</div>
 
       <form action="https://formspree.io/f/yourformid" method="POST">
         <input type="number" name="underbust" placeholder="Underbust (inches)" required>
         <input type="number" name="bust" placeholder="Bust (inches)" required>
         <input type="number" name="bottom_cup_depth" placeholder="Bottom Cup Depth (inches)" required>
         <input type="number" name="horizontal_hemisphere" placeholder="Horizontal Hemisphere (inches)" required>
-        <button type="submit">Order</button>
-      </form>
-    </div>
-
-    <!-- GARTER -->
-    <div class="product">
-      <h3>Garter Belt</h3>
-      <div class="subtitle">Please insert accurate measurements below</div>
-      <div class="price">£140</div>
-
-      <form action="https://formspree.io/f/yourformid" method="POST">
         <input type="number" name="torso_length" placeholder="Torso Length (inches)" required>
         <input type="number" name="waist" placeholder="Waist (inches)" required>
         <input type="number" name="high_hip" placeholder="High Hip (inches)" required>
         <input type="number" name="low_hip" placeholder="Low Hip (inches)" required>
-        <button type="submit">Order</button>
-      </form>
-    </div>
-
-    <!-- THONG -->
-    <div class="product">
-      <h3>Thong</h3>
-      <div class="subtitle">Please insert accurate measurements below</div>
-      <div class="price">£60</div>
-
-      <form action="https://formspree.io/f/yourformid" method="POST">
-        <input type="number" name="waist" placeholder="Waist (inches)" required>
-        <input type="number" name="high_hip" placeholder="High Hip (inches)" required>
-        <input type="number" name="low_hip" placeholder="Low Hip (inches)" required>
         <input type="number" name="rise" placeholder="Rise / Crotch Depth (inches)" required>
-        <button type="submit">Order</button>
+
+        <button type="submit">Order Full Set</button>
       </form>
     </div>
 
-  </div>
-</section>
-
-<!-- ART -->
-<section id="art">
-  <div class="section-title">Art</div>
-
-  <div class="grid art">
-    <img src="https://via.placeholder.com/400x500">
-    <img src="https://via.placeholder.com/400x500">
-    <img src="https://via.placeholder.com/400x500">
   </div>
 </section>
 
 <footer>
-  © 2026 Lingerie Atelier — Made to Measure
+  © Atelier du Sloan
 </footer>
 
 </body>
